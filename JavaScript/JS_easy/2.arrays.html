@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Arrays</title>
+    
+    
+    </head>
+    
+    <body>
+        <p id="paragraph">Javascript</p>
+        <script>
+            
+            function showText(x){
+                document.getElementById("paragraph").innerHTML += "<br/>"+ x;
+            }
+            
+            var teams=["CSK","DD","KX1P"];
+            showText(teams);
+            
+            delete teams[1];
+            showText(teams);
+            
+            teams[1]="GL";
+            showText(teams);
+            
+            teams[4]="MI";
+            showText(teams);
+            
+            teams.splice(3,1,"DC","RR","KKR");
+            showText(teams);
+            
+            teams.sort();
+            showText(teams);
+            
+            teams.reverse();
+            showText(teams);
+            
+            var myString = "i m the best web developer";
+            var myArray= myString.split(' ');
+            showText(myArray);
+            
+        </script>
+    
+    </body>
+
+
+
+
+</html>

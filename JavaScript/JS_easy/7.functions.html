@@ -1,0 +1,85 @@
+<!DOCTYPLE HTML>
+
+<html>
+    <head>
+        
+        <meta charset="uft-8">
+        <title>functions</title>
+        
+        <style>
+            
+            .bluebox{
+                color: #fff;
+                background-color: #3367d7;
+                height: 100px;
+                width: auto;
+                font-size: 20px;
+            }
+            
+            .greenbox{
+                color: #000;
+                background-color: #b6dd6d;
+                height: 100px;
+                width: auto;
+                font-size: 20px;
+            }
+            
+            .yellowbox{
+                color: #000;
+                background-color: #f6f091;
+                height: 100px;
+                width: auto;
+                font-size: 20px;
+            }
+            
+            .big{
+                font-size: 30px;
+                color: red;
+            }
+            
+        </style>
+    
+    </head>
+    
+    <body>
+        <div class="bluebox" id="facebook_box">
+            <p>Facebook</p>
+        
+        </div>
+        
+        <div class="yellowbox" id="yahoo_box">
+            <p>Yahoo</p>
+        
+        
+        </div>
+        
+        <div class="greenbox" id="apple_box">
+            <p>Apple</p>
+        
+        
+        </div>
+        
+        <button id="facebook" onclick="swap('facebook_box','apple_box')">Swap blue and green html</button>
+        <button id="apple" onclick="swap('yahoo_box','apple_box')">Swap green and yellow html</button>
+        
+        <script>
+            
+            function greeting(firstname){
+                window.alert(firstname);
+            }
+            
+//            greeting('HI Mankirat');
+            
+            function swap(id1,id2){
+                var x=document.getElementById(id1).innerHTML;
+                var y=document.getElementById(id2).innerHTML;
+                
+                document.getElementById(id1).innerHTML=y;
+                document.getElementById(id2).innerHTML=x;
+            }
+            
+         
+        </script>
+        
+    </body>
+</html>

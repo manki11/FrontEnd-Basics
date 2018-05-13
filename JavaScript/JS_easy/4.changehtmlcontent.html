@@ -1,0 +1,82 @@
+<!DOCTYPLE HTML>
+
+<html>
+    <head>
+        
+        <meta charset="uft-8">
+        <title>Change html</title>
+        
+        <style>
+            
+            .bluebox{
+                color: #fff;
+                background-color: #3367d7;
+                height: 100px;
+                width: auto;
+                font-size: 20px;
+            }
+            
+            .greenbox{
+                color: #000;
+                background-color: #b6dd6d;
+                height: 100px;
+                width: auto;
+                font-size: 20px;
+            }
+            
+            .yellowbox{
+                color: #000;
+                background-color: #f6f091;
+                height: 100px;
+                width: auto;
+                font-size: 20px;
+            }
+            
+            .big{
+                font-size: 30px;
+                color: red;
+            }
+            
+        
+        
+        </style>
+    
+    </head>
+    
+    <body>
+        <div class="bluebox" id="facebook_box">
+            <p>Facebook is a very big <span class="big">company</span>. It hires thousands of people</p>
+        
+        </div>
+        
+        <div class="yellowbox">
+            <p>Yahoo</p>
+        
+        
+        </div>
+        
+        <div class="greenbox" id="greenbox">
+            <p>Apple</p>
+        
+        
+        </div>
+        
+        <button id="facebook">Change facebook content</button>
+        <button id="apple">Change apple content</button>
+        
+        <script>
+            document.getElementById("facebook").onclick=function(){
+                document.getElementById("facebook_box").innerHTML="<p>Facebook</p>";
+            }
+            
+            document.getElementById("apple").onclick=function(){
+                document.getElementById("greenbox").innerHTML="<ul><li>Mercedes</li></ul><li>Audi</li><li>BMW</li>";
+            }
+            
+        
+        
+        
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Errors
+    </title>
+  </head>
+  <body>
+      <p>Passwork must contain 6 letters, 1 capital letter, 1 numerical value</p>
+      
+      <p>Enter Password:<br/><input id="password1" type="password"></p>
+      <p>Re Enter Password:<br/><input id="password2" type="password"></p>
+      <p id="error"></p>
+      <button onclick="check()">Submit</button>
+      
+      <p id="error"></p>
+
+    <script>
+        
+        function check(){
+            var pass1=document.getElementById("password1").value;
+            var pass2=document.getElementById("password2").value;
+            var error=document.getElementById("error");
+            var errorTothrow="";
+            
+            try{
+                if(pass1.length<6){
+                    errorTothrow="Password too short";
+                }else if(/[A-Z]/g.test(pass1)==false){
+                    errorTothrow="Password doesn't include capital letter";
+                }else if(/\d/g.test(pass1)==false){
+                    errorTothrow="Password doesn't include numerical value";
+                }else if(pass1!=pass2){
+                    errorTothrow="Passwords don't match";
+                }else{
+                    errorTothrow="All fields are correct";
+                }
+                throw errorTothrow;
+            }catch(err){
+                error.innerHTML=err;
+            }
+
+            
+        }
+        
+
+    </script>
+  </body>
+</html>

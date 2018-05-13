@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Object Constructors</title>
+    
+    
+    </head>
+    
+    <body>
+        <p>Javascript</p>
+        <script>
+            
+            function myPhone(model,make,warranty){
+                this.model=model;
+                this.make=make;
+                this.warranty=warranty;
+                var condition;
+                this.extendwarranty= function(x){
+                    this.warranty+=x;
+                }
+            }
+            
+            var phone=new myPhone("apple","iphone",6);
+            window.console.log(phone);
+            phone.extendwarranty(5);
+            window.console.log(phone.warranty);
+        
+            phone.condition="like new";
+            window.console.log(phone.condition);
+            
+            myPhone.prototype.condition = "not defined by user";
+            var otherPhone=new myPhone();
+            window.console.log(otherPhone.condition);
+        </script>
+    
+    </body>
+
+
+
+
+</html>

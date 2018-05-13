@@ -1,0 +1,89 @@
+<!DOCTYPLE HTML>
+
+<html>
+    <head>
+        
+        <meta charset="uft-8">
+        <title>Change html using var</title>
+        
+        <style>
+            
+            .bluebox{
+                color: #fff;
+                background-color: #3367d7;
+                height: 100px;
+                width: auto;
+                font-size: 20px;
+            }
+            
+            .greenbox{
+                color: #000;
+                background-color: #b6dd6d;
+                height: 100px;
+                width: auto;
+                font-size: 20px;
+            }
+            
+            .yellowbox{
+                color: #000;
+                background-color: #f6f091;
+                height: 100px;
+                width: auto;
+                font-size: 20px;
+            }
+            
+            .big{
+                font-size: 30px;
+                color: red;
+            }
+            
+        </style>
+    
+    </head>
+    
+    <body>
+        <div class="bluebox" id="facebook_box">
+            <p>Facebook</p>
+        
+        </div>
+        
+        <div class="yellowbox">
+            <p>Yahoo</p>
+        
+        
+        </div>
+        
+        <div class="greenbox" id="greenbox">
+            <p>Apple</p>
+        
+        
+        </div>
+        
+        <button id="facebook">Change facebook style</button>
+        <button id="apple">Change apple style</button>
+        
+        <script>
+            
+            var color='rgb(18,149,68)';
+            
+            
+            document.getElementById("facebook").onclick=function(){
+                document.getElementById("facebook_box").style.background=color;
+                document.getElementById("facebook_box").innerHTML= color;
+            }
+            
+            
+            document.getElementById("apple").onclick=function(){
+                var x,y,z;
+                x=Math.round(Math.random()*256);
+                document.getElementById("greenbox").style.background=color;
+                document.getElementById("greenbox").innerHTML= color;
+            }
+            
+            
+            
+            
+        </script>
+        
+    </body>
+</html>

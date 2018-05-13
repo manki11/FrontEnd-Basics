@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Objects</title>
+    
+    
+    </head>
+    
+    <body>
+        <p>Javascript</p>
+        <script>
+            
+            var myPhone = {
+                make : "Apple",
+                model : "Iphone",
+                warranty : 12,
+                color : "white"
+            };
+            
+            window.console.log(myPhone);
+            delete myPhone.color;
+            window.console.log(myPhone);
+            
+            myPhone.color = "black";
+            window.console.log(myPhone);
+            
+            myPhone.year= 2010;
+            window.console.log(myPhone);
+            
+            otherPhone=myPhone;
+            
+            otherPhone.color="red";
+            window.console.log(otherPhone);
+            window.console.log(myPhone);
+            
+            var samsumgPhone=new Object();
+            samsumgPhone.make="Samsung";
+            samsumgPhone.warranty="12";
+            samsumgPhone.color="black";
+            samsumgPhone.model="Samsung";
+            
+            window.console.log(samsumgPhone);
+            
+        
+        
+        </script>
+    
+    </body>
+
+
+
+
+</html>
