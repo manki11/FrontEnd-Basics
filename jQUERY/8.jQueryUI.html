@@ -1,0 +1,83 @@
+<!DOCTYPLE HTML>
+
+<html>
+
+<head>
+
+    <meta charset="uft-8">
+    <title>JQueryUI</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            color: #fff;
+            background-color: #2299b3;
+            height: 100px;
+            width: 300px;
+        }
+        
+        .greenbox {
+            color: #000;
+            background-color: #b6dd6d;
+            height: 100px;
+            width: auto;
+        }
+        
+        .yellowbox {
+            color: #000;
+            background-color: #f6f091;
+            height: 100px;
+            width: auto;
+        }
+        
+        .big {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bluebox ui-corner-all" id="facebook">
+        <p>This is facebook</p>
+
+    </div>
+
+    <div class="yellowbox ui-corner-all" id="yahoo">
+        <p>Yahoo</p>
+
+
+    </div>
+
+    <div class="greenbox ui-corner-all" id="apple">
+        <p>Apple</p>
+
+
+    </div>
+
+    <div class="ui-state-error" style="width: 200px; height:100px">
+        <p>Error Message</p>
+    </div>
+    <br/><br/>
+
+    <p>Enter Your Name:<input id="input" type="text"></p>
+
+    <button id="button">Button</button>
+
+
+
+
+    <script>
+        $(function() {
+            $("#facebook").draggable();
+
+        });
+    </script>
+
+</body>
+
+</html>

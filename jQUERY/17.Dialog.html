@@ -1,0 +1,109 @@
+<!DOCTYPLE HTML>
+<html>
+
+<head>
+
+    <meta charset="uft-8">
+    <title>Dialog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            color: #ffffff;
+            background-color: #2299b3;
+            height: auto;
+            width: auto;
+            margin-bottom: 30px;
+            padding: 10px;
+            z-index: 0;
+        }
+
+        .greenbox {
+            color: #000000;
+            background-color: #b6dd6d;
+            height: auto;
+            width: auto;
+            z-index: 0;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        .yellowbox {
+            color: #000000;
+            background-color: #f6f091;
+            height: auto;
+            width: auto;
+            z-index: 0;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="bluebox ui-corner-all" id="facebook">
+
+</div>
+
+<div class="yellowbox ui-corner-all" id="yahoo">
+    <p>Yahoo</p>
+</div>
+
+<div class="greenbox ui-corner-all" id="apple">
+    <p>Apple</p>
+</div>
+
+<div id="mydialog" title="this is my dialog">
+    <p>welcome to my page</p>
+</div>
+
+<div id="confirmation" title="Leave the page?">
+    <p><span class="ui-icon ui-icon-alert"></span>All unsaved data will be lost. Are u still sure?</p>
+</div>
+
+<button id="open">Click here for dialog</button>
+<button id="previous">Go to previous page</button>
+
+<script>
+    $(function () {
+        $("#mydialog").dialog({
+            autoOpen: false
+        });
+        $("button").button();
+
+        $("#open").click(function () {
+            $("#mydialog").dialog("open");
+        });
+
+        $("#previous").click(function () {
+            $("#confirmation").dialog("open");
+        });
+
+        $("#confirmation").dialog({
+            autoOpen:false,
+            modal:true,
+            buttons: {
+                "Yes": function () {
+                    window.history.back();
+                    $(this).dialog("close");
+                },
+                "No": function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+
+
+    });
+</script>
+
+</body>
+
+</html>

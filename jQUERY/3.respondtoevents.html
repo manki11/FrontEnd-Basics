@@ -1,0 +1,108 @@
+<!DOCTYPLE HTML>
+
+<html>
+    <head>
+
+    <meta charset="uft-8">
+    <title>respond to events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            color: #fff;
+            background-color: #3367d7;
+            height: 100px;
+            width: auto;
+        }
+        
+        .greenbox {
+            color: #000;
+            background-color: #b6dd6d;
+            height: 100px;
+            width: auto;
+        }
+        
+        .yellowbox {
+            color: #000;
+            background-color: #f6f091;
+            height: 100px;
+            width: auto;
+        }
+        
+        .big {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bluebox" id="facebook_box">
+        <p>Facebook is a very big <span class="big">company</span>. It hires thousands of people</p>
+        <p>2nd child</p>
+        <p>3rd child</p>
+
+    </div>
+
+    <div class="yellowbox">
+        <p>Yahoo</p>
+        <p><a href="http://www.google.com">this is a google</a></p>
+        <p><a href="https://github.com">this is a github</a></p>
+
+
+    </div>
+
+    <div class="greenbox" id="greenbox">
+        <p>Apple</p>
+        <ul>
+            <li>AUDi</li>
+            <li>MERC</li>
+        </ul>
+
+
+    </div>
+    <br/><br/>
+
+    <input id="input" type="text">
+
+    <button id="submit" type="submit">Submit</button>
+
+
+    <script>
+        $(function() {
+            //            $("p").click(function() {
+            //                $(this).css("background-color", "rgba( 184, 9, 64, 0.391 )");
+            //            })
+
+            $("p").mouseover(function() {
+                $(this).css("background-color", "rgba( 184, 9, 64, 0.391 )");
+            })
+
+            $("p").mouseout(function() {
+                $(this).css("background-color", "");
+            })
+
+            $("input").focusin(function() {
+                $(this).css("background-color", "#dddddd");
+            })
+
+            $("input").focusout(function() {
+                $(this).css("background-color", "");
+            })
+
+            $("input").keyup(function() {
+                $(this).css("background-color", "#ff0000");
+            })
+
+            $("#submit").click(function() {
+                $("#input").css("background-color", "#fff");
+                $("#input").val("");
+            })
+
+
+        });
+    </script>
+
+</body>
+</html>

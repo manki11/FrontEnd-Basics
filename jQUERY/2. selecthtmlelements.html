@@ -1,0 +1,95 @@
+<!DOCTYPLE HTML>
+
+<html>
+    <head>
+
+    <meta charset="uft-8">
+    <title>Change html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            color: #fff;
+            background-color: #3367d7;
+            height: 100px;
+            width: auto;
+        }
+        
+        .greenbox {
+            color: #000;
+            background-color: #b6dd6d;
+            height: 100px;
+            width: auto;
+        }
+        
+        .yellowbox {
+            color: #000;
+            background-color: #f6f091;
+            height: 100px;
+            width: auto;
+        }
+        
+        .big {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bluebox" id="facebook_box">
+        <p>Facebook is a very big <span class="big">company</span>. It hires thousands of people</p>
+        <p>2nd child</p>
+        <p>3rd child</p>
+
+    </div>
+
+    <div class="yellowbox">
+        <p>Yahoo</p>
+        <p><a href="http://www.google.com">this is a google</a></p>
+        <p><a href="https://github.com">this is a github</a></p>
+
+
+    </div>
+
+    <div class="greenbox" id="greenbox">
+        <p>Apple</p>
+        <ul>
+            <li>AUDi</li>
+            <li>MERC</li>
+        </ul>
+
+
+    </div>
+
+    <button id="facebook" type="submit">Change facebook content</button>
+    <button id="apple" type="submit">Change apple content</button>
+
+    <script>
+        $(function() {
+            $("*").css("font-size", '15px');
+            //            $("p").css("text-align","center");     // for all paragraphs
+            //            $("div > p").css("text-align","left"); // for all paragraphs direct child of divs
+            //            $("div ~ p").css("text-align","left"); // for all paragraphs direct siblings of divs
+            $(".big").css("background-color", "#fff");
+            $("div.bluebox").css("font-family", "sans-serif");
+
+            //            $("p:first-child").css("text-decoration","underline");
+            //            $("p:last-child").css("text-decoration", "line-through");
+
+            $("[href]").css("color", "red");
+            $("li").css("background-color", "white");
+
+            $("ul").css("float", "left");
+
+            $(":Submit").css("background-color", "#29d9e9");
+
+            $("p:has(a)").css("background-color", "#0d66b4");
+
+
+        });
+    </script>
+
+</body>
+</html>

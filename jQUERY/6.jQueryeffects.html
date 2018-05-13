@@ -1,0 +1,102 @@
+<!DOCTYPLE HTML>
+
+<html>
+
+<head>
+
+    <meta charset="uft-8">
+    <title>jQuery effects</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            color: #fff;
+            background-color: #3367d7;
+            height: 100px;
+            width: 300px;
+        }
+        
+        .greenbox {
+            color: #000;
+            background-color: #b6dd6d;
+            height: 100px;
+            width: auto;
+        }
+        
+        .yellowbox {
+            color: #000;
+            background-color: #f6f091;
+            height: 100px;
+            width: auto;
+        }
+        
+        .big {
+            color: red;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="bluebox" id="facebook">
+        <p>This is facebook</p>
+
+    </div>
+
+    <div class="yellowbox" id="yahoo">
+        <p>Yahoo</p>
+
+
+    </div>
+
+    <div class="greenbox" id="apple">
+        <p>Apple</p>
+
+
+    </div>
+    <br/><br/>
+
+    <p>Enter Your Name:<input id="input" type="text"></p>
+
+    <button id="fadeOutfacebook">Fade Out</button>
+    <button id="fadeInfacebook">Fade In</button>
+    <button id="fadeToggle">Toggle</button>
+    <button id="animate">Animate</button>
+
+
+
+    <script>
+        $(function() {
+            $("#fadeOutfacebook").click(function() {
+                $("#facebook").fadeOut(1000)
+            })
+        });
+
+        $(function() {
+            $("#fadeInfacebook").click(function() {
+                $("#facebook").fadeIn(1000)
+            })
+        });
+
+        $(function() {
+            $("#fadeToggle").click(function() {
+                $("#apple").toggle(1000)
+            })
+        });
+
+        $(function() {
+            $("#animate").click(function() {
+                $("#yahoo").animate({
+                    width: "200px",
+                    height: "300px",
+                }, 2000)
+            })
+        });
+
+    </script>
+
+</body>
+
+</html>

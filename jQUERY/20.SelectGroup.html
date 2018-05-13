@@ -1,0 +1,92 @@
+<!DOCTYPLE HTML>
+<html>
+
+<head>
+
+    <meta charset="uft-8">
+    <title>Select Group</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            color: #ffffff;
+            background-color: #2299b3;
+            height: auto;
+            width: auto;
+            margin-bottom: 30px;
+            padding: 10px;
+            z-index: 0;
+        }
+
+        .greenbox {
+            color: #000000;
+            background-color: #b6dd6d;
+            height: auto;
+            width: auto;
+            z-index: 0;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        .yellowbox {
+            color: #000000;
+            background-color: #f6f091;
+            height: auto;
+            width: auto;
+            z-index: 0;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        #label{
+            line-height: 30px;
+            position: absolute;
+            left: 44.5%;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="bluebox ui-corner-all" id="facebook">
+    <p>Facebook</p>
+    <label for="options">Select the car you love!</label>
+    <select id="options">
+
+        <optgroup label="Premium">
+            <option>MERC</option>
+            <option>AUDI</option>
+            <option>BMW</option>
+        </optgroup>
+        <optgroup label="Affordable">
+            <option>SUZUKI</option>
+        </optgroup>
+
+    </select>
+</div>
+
+<div class="yellowbox ui-corner-all" id="yahoo">
+    <p>Yahoo</p>
+</div>
+
+<div class="greenbox ui-corner-all" id="apple">
+    <p>Apple</p>
+</div>
+
+<script>
+    $(function () {
+        $("#options").selectmenu();
+
+    });
+</script>
+
+</body>
+
+</html>

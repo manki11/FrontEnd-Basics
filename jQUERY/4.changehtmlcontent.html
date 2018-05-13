@@ -1,0 +1,109 @@
+<!DOCTYPLE HTML>
+
+<html>
+
+<head>
+
+    <meta charset="uft-8">
+    <title>change html content</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            color: #fff;
+            background-color: #3367d7;
+            height: 100px;
+            width: auto;
+        }
+        
+        .greenbox {
+            color: #000;
+            background-color: #b6dd6d;
+            height: auto;
+            width: auto;
+        }
+        
+        .yellowbox {
+            color: #000;
+            background-color: #f6f091;
+            height: auto;
+            width: auto;
+        }
+        
+        .big {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bluebox" id="facebook_box">
+        <p>Facebook is a very big <span class="big">company</span>. It hires thousands of people</p>
+        <p>2nd child</p>
+        <p>3rd child</p>
+
+    </div>
+
+    <div class="yellowbox" id="yahoo">
+        <p>Yahoo</p>
+        <p><a href="http://www.google.com">this is a google</a></p>
+        <p><a href="https://github.com">this is a github</a></p>
+
+
+    </div>
+
+    <div class="greenbox" id="greenbox">
+        <p>Apple</p>
+        <ul>
+            <li>AUDi</li>
+            <li>MERC</li>
+        </ul>
+
+        <p><a id="linkm" href="www.microsoft.com" title="microsoft">Microsoft</a></p>
+
+
+    </div>
+    <br/><br/>
+
+    <input id="input" type="text">
+
+    <button id="changefacebook" type="submit">change facebook</button>
+    <button id="changeyahoo" type="submit">change yahoo</button>
+    <button id="changeinput" type="submit">change input</button>
+    <button id="changelink" type="submit">change link</button>
+    <button id="addtext" type="submit">add text</button>
+
+
+    <script>
+        $(function() {
+            $("#changefacebook").click(function() {
+                $("#facebook_box").text("This is facebook");
+            })
+
+            $("#changeyahoo").click(function() {
+                $("#yahoo").html("<p>This is yahoo</p><p>This is yellow</p>");
+            })
+
+            $("#changeinput").click(function() {
+                $("#input").val("Mankirat");
+            })
+
+            $("#changelink").click(function() {
+                $("#linkm").attr({
+                    "title": "google",
+                    "href": "http://www.google.com"
+                });
+            })
+
+            $("#addtext").click(function() {
+                $("#greenbox").append("<p>This is new</p>");
+                //                $("#greenbox").prepend("<p>This is new</p>");
+            })
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPLE HTML>
+
+<html>
+
+<head>
+
+    <meta charset="uft-8">
+    <title>DatePicker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            color: #ffffff;
+            background-color: #2299b3;
+            height: auto;
+            width: auto;
+            margin-bottom: 30px;
+            padding: 10px;
+            z-index: 0;
+        }
+
+        .greenbox {
+            color: #000000;
+            background-color: #b6dd6d;
+            height: auto;
+            width: auto;
+            z-index: 0;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        .yellowbox {
+            color: #000000;
+            background-color: #f6f091;
+            height: auto;
+            width: auto;
+            z-index: 0;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="bluebox ui-corner-all" id="facebook">
+    <p><label for="departure">Departure date:</label><input id="departure"></p>
+    <p><label for="arrival">Arrival date:</label><input id="arrival"></p>
+</div>
+
+<div class="yellowbox ui-corner-all" id="yahoo">
+    <p>Yahoo</p>
+</div>
+
+<div class="greenbox ui-corner-all" id="apple">
+    <p>Apple</p>
+</div>
+
+<script>
+    $(function () {
+        $("#departure").datepicker({
+            showAnim:"slideDown",
+            changeYear: true,
+            dateFormat: "d M, yy",
+            showOn: "button",
+            minDate:+1,
+            onClose: function (selectedDate) {
+                $("#arrival").datepicker("options","minDate",selectedDate);
+            }
+//            buttonImage:"../HTML/images/picture.png",
+//            buttonImageOnly: true,
+//            buttonText:"choose date"
+        });
+        $("#arrival").datepicker({
+            dateFormat: "d M, yy"
+        });
+    });
+</script>
+
+</body>
+
+</html>

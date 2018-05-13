@@ -1,0 +1,107 @@
+<!DOCTYPLE HTML>
+<html>
+
+<head>
+
+    <meta charset="uft-8">
+    <title>Slider</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            color: #ffffff;
+            background-color: #2299b3;
+            height: auto;
+            width: auto;
+            margin-bottom: 30px;
+            padding: 10px;
+            z-index: 0;
+        }
+
+        .greenbox {
+            color: #000000;
+            background-color: #b6dd6d;
+            height: auto;
+            width: auto;
+            z-index: 0;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        .yellowbox {
+            color: #000000;
+            background-color: #f6f091;
+            height: auto;
+            width: auto;
+            z-index: 0;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        #slider {
+            margin: 20px;
+        }
+
+        #range{
+            margin: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="bluebox ui-corner-all" id="facebook">
+    <p>Facebook</p>
+</div>
+
+<div class="yellowbox ui-corner-all" id="yahoo">
+    <p>Yahoo</p>
+</div>
+
+<div class="greenbox ui-corner-all" id="apple">
+    <p>Apple</p>
+</div>
+
+<div id="slider"></div>
+<label for="input_slider">Cost:</label>
+<input id="input_slider" readonly>
+
+<div id="range"></div>
+<label for="range_input">Cost:</label>
+<input id="range_input" readonly>
+
+
+<script>
+    $(function () {
+        $("#slider").slider({
+            min:0,
+            max:40,
+            slide: function(event, ui) {
+                $("#input_slider").val(ui.value);
+            }
+        });
+
+
+        $("#range").slider({
+            range: true,
+            min:0,
+            max:100000,
+            step:1000,
+            values:[0,10000],
+            slide: function(event, ui) {
+                $("#range_input").val(ui.values[0]+" - "+ ui.values[1]+" miles");
+            }
+        });
+
+    });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPLE HTML>
+
+<html>
+
+<head>
+
+    <meta charset="uft-8">
+    <title>Sortable</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            float: left;
+            color: #fff;
+            background-color: #2299b3;
+            height: 150px;
+            width: 300px;
+            margin-right: 100px;
+            z-index: 0;
+        }
+        
+        .greenbox {
+            color: #000;
+            float: left;
+            background-color: #b6dd6d;
+            height: auto;
+            width: 300px;
+            margin-right: 100px;
+            z-index: 0;
+            padding: 10px;
+        }
+        
+        .yellowbox {
+            float: left;
+            color: #000;
+            background-color: #f6f091;
+            height: auto;
+            width: 300px;
+            margin-right: 100px;
+            z-index: 0;
+            padding: 10px;
+        }
+        
+        .connect {
+            min-height: 30px;
+        }
+        
+        li {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        #list .ui-selecting {
+            background: #deebfc;
+        }
+        
+        #list .ui-selected {
+            background: #a5c9f7;
+        }
+        
+        .big {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bluebox ui-corner-all" id="facebook">
+        <p>This is facebook</p>
+
+    </div>
+
+    <div class="yellowbox ui-corner-all" id="yahoo">
+        <p>Yahoo</p>
+
+        <ul id="list1" class="connect">
+            <li class="ui-state-default">BMW</li>
+            <li class="ui-state-default">MERC</li>
+            <li class="ui-state-default">AUDI</li>
+        </ul>
+
+
+    </div>
+
+    <div class="greenbox ui-corner-all" id="apple">
+        <p>Apple</p>
+        <ul id="list2" class="connect">
+            <li class="ui-state-default">FORD</li>
+            <li class="ui-state-default">TOYOTA</li>
+            <li class="ui-state-default">SUZUKI</li>
+        </ul>
+    </div>
+
+
+    <script>
+        $(function() {
+            $("#list1").sortable({
+                placeholder: "ui-state-highlight",
+            });
+
+            $("#list2").sortable({
+                placeholder: "ui-state-highlight",
+            });
+
+            $("#list1, #list2").sortable({
+                connectWith: ".connect"
+            });
+
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPLE HTML>
+
+<html>
+
+<head>
+
+    <meta charset="uft-8">
+    <title>change html style</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            color: #fff;
+            background-color: #3367d7;
+            height: 100px;
+            width: 300px;
+        }
+        
+        .greenbox {
+            color: #000;
+            background-color: #b6dd6d;
+            height: auto;
+            width: auto;
+        }
+        
+        .yellowbox {
+            color: #000;
+            background-color: #f6f091;
+            height: auto;
+            width: auto;
+        }
+        
+        .big {
+            color: red;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="bluebox" id="facebook">
+        <p>This is facebook</p>
+
+    </div>
+
+    <div class="yellowbox" id="yahoo">
+        <p>Yahoo</p>
+        <p><a href="http://www.google.com">this is a google</a></p>
+        <p><a href="https://github.com">this is a github</a></p>
+
+
+    </div>
+
+    <div class="greenbox" id="greenbox">
+        <p>Apple</p>
+        <ul>
+            <li>AUDi</li>
+            <li>MERC</li>
+        </ul>
+
+        <p><a id="linkm" href="www.microsoft.com" title="microsoft">Microsoft</a></p>
+
+
+    </div>
+    <br/><br/>
+
+    <p>Enter Your Name:<input id="input" type="text"></p>
+
+    <button id="changefacebook">Change facebook</button>
+    <button id="changeapple">Change apple</button>
+
+
+
+    <script>
+        $(function() {
+
+            $("#changefacebook").click(function() {
+                $("#facebook").css("width", $("#facebook").width() + 100 * Math.random() - 50);
+            })
+
+            //            $("#changeapple").click(function() {
+            //                $("#yahoo").removeClass("yellowbox");
+            //            })
+
+            $("#changeapple").click(function() {
+                $("#yahoo").addClass("bluebox")
+            })
+
+            $("#yahoo").click(function() {
+                $("#yahoo").css("position", "absolute");
+                $("#yahoo").css({
+                    "top": 200 * Math.random(),
+                    "left": 200 * Math.random()
+                })
+            })
+
+        })
+
+    </script>
+
+</body>
+
+</html>

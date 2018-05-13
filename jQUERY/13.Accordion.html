@@ -1,0 +1,107 @@
+<!DOCTYPLE HTML>
+
+<html>
+
+<head>
+
+    <meta charset="uft-8">
+    <title>Accordion</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            color: #fff;
+            background-color: #2299b3;
+            height: auto;
+            width: auto;
+            margin-bottom: 30px;
+            z-index: 0;
+        }
+        
+        .greenbox {
+            color: #000;
+            background-color: #b6dd6d;
+            height: auto;
+            width: auto;
+            z-index: 0;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .yellowbox {
+            color: #000;
+            background-color: #f6f091;
+            height: auto;
+            width: auto;
+            z-index: 0;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .big {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="ui-widget-content" id="resize">
+        <div class="bluebox ui-corner-all" id="facebook">
+            <h3>Section 1</h3>
+            <div>
+                <p>This is content 1</p>
+            </div>
+
+            <h3>Section 2</h3>
+            <div>
+                <p>This is content 2</p>
+            </div>
+
+            <h3>Section 2</h3>
+            <div>
+                <p>This is content 2</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="yellowbox ui-corner-all" id="yahoo">
+        <p>Yahoo</p>
+
+
+    </div>
+
+    <div class="greenbox ui-corner-all" id="apple">
+        <p>Apple</p>
+    </div>
+
+
+    <script>
+        $(function() {
+            $("#facebook").accordion({
+                collapsible: true,
+                icons: {
+                    header: "ui-icon-circle-plus",
+                    activeHeader: "ui-icon-circle-minus"
+                },
+                heightStyle: "content"
+            });
+
+            $("#resize").resizable({
+                resize: function() {
+                    $("#facebook").accordion("refresh");
+                }
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

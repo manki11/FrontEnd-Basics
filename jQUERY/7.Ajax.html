@@ -1,0 +1,94 @@
+<!DOCTYPLE HTML>
+
+<html>
+
+<head>
+
+    <meta charset="uft-8">
+    <title>Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            color: #fff;
+            background-color: #3367d7;
+            height: 100px;
+            width: 300px;
+        }
+        
+        .greenbox {
+            color: #000;
+            background-color: #b6dd6d;
+            height: 100px;
+            width: auto;
+        }
+        
+        .yellowbox {
+            color: #000;
+            background-color: #f6f091;
+            height: 100px;
+            width: auto;
+        }
+        
+        .big {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bluebox" id="facebook">
+        <p>This is facebook</p>
+
+    </div>
+
+    <div class="yellowbox" id="yahoo">
+        <p>Yahoo</p>
+
+
+    </div>
+
+    <div class="greenbox" id="apple">
+        <p>Apple</p>
+
+
+    </div>
+    <br/><br/>
+
+    <p>Enter Your Name:<input id="input" type="text"></p>
+
+    <button id="button">Button</button>
+
+
+
+
+    <script>
+        $(function() {
+            $("#facebook").load("Ajax/somedata.txt")
+            $("#yahoo").load("Ajax/somedata.txt #data")
+
+            //            $("#button").click(function() {
+            //                $.ajax({
+            //                    url: "Ajax/somedata.txt",
+            //                    success: function(data) {
+            //                        $("#apple").html(data);
+            //                    }
+            //                })
+            //            })
+
+            $("#button").click(function() {
+                $.ajax({
+                    url: "Ajax/somedata.txt"
+                }).done(function(data) {
+                    $("#apple").html(data);
+                })
+            })
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPLE HTML>
+
+<html>
+
+<head>
+
+    <meta charset="uft-8">
+    <title>Draggable and dropable</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <style>
+        .bluebox {
+            float: left;
+            color: #fff;
+            background-color: #2299b3;
+            height: 150px;
+            width: 300px;
+            margin-right: 100px;
+            z-index: 0;
+        }
+        
+        .greenbox {
+            color: #000;
+            float: left;
+            background-color: #b6dd6d;
+            height: 150px;
+            width: 300px;
+            margin-right: 100px;
+            z-index: 0;
+        }
+        
+        .yellowbox {
+            float: left;
+            color: #000;
+            background-color: #f6f091;
+            height: 150px;
+            width: 300px;
+            margin-right: 100px;
+            z-index: 0;
+        }
+        
+        #droppable {
+            left: 500px;
+            top: 200px;
+            position: absolute;
+            background-color: #b50bee;
+            height: 200px;
+            width: 400px;
+            color: white;
+            text-align: center;
+            line-height: 150px;
+        }
+        
+        .big {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bluebox ui-corner-all" id="facebook">
+        <p>This is facebook</p>
+
+    </div>
+
+    <div class="yellowbox ui-corner-all" id="yahoo">
+        <p>Yahoo</p>
+
+        <ul id="list">
+            <li>eggs</li>
+            <li>bread</li>
+            <li>chicken</li>
+
+
+        </ul>
+
+
+    </div>
+
+    <div class="greenbox ui-corner-all" id="apple">
+        <p>Apple</p>
+    </div>
+
+    <div id="droppable" class="ui-corner-all">
+        <p>Drag all the elements here!</p>
+    </div>
+
+
+    <script>
+        $(function() {
+            var message = ["Please", "Leave me alone", "I am good", "Shit"];
+
+            $("#facebook").draggable({
+                revert: true
+            });
+            $("#yahoo").draggable({
+                revert: true
+            });
+
+            $("#apple").draggable({
+                revert: true,
+                start: function() {
+                    $("#facebook").css("background", "#df1f1f")
+                },
+                drag: function() {
+                    $("#apple").css("background", "#a4bb4b")
+                    $("#apple").find("p").html(message[Math.floor(Math.random() * 3)]);
+                },
+                stop: function() {
+                    $("#apple").css("background", "#b6dd6d")
+                    $("#facebook").css("background", "#2299b3")
+                }
+            });
+
+            $("#droppable").droppable({
+                drop: function(event, ui) {
+                    $(this).css("background-color", "#de88fb")
+                    $(this).find("p").remove();
+                    $("<l1></l1>").text(ui.draggable.text()).appendTo(this)
+                },
+                accept: "#list li"
+            });
+
+            $("#list").find("li").draggable({
+                helper: "clone",
+                appendTo: "body"
+
+            })
+
+        });
+    </script>
+
+</body>
+
+</html>
