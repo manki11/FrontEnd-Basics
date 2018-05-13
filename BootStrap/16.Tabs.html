@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Tabs</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<ul class="nav nav-justified nav-tabs" id="myTabs">
+    <li class="nav-item"><a class="nav-link active" href="#Home" data-toggle="tab">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="#Messages" data-toggle="tab">Messages</a></li>
+    <li class="nav-item"><a class="nav-link" href="#Notification" data-toggle="tab">Notification</a></li>
+    <li class="nav-item"><a class="nav-link" href="#Contact" data-toggle="tab">Contact Us</a></li>
+
+</ul>
+
+<div id="mycontent" class="tab-content">
+    <div class="tab-pane active fade in" id="Home">
+        <h4>This is home! Welcome</h4>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+    </div>
+
+    <div class="tab-pane fade in" id="Messages">
+        <h4>This is Messages! See</h4>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+    </div>
+
+    <div class="tab-pane fade in" id="Notification">
+        <h4>This is Notification! Read</h4>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+    </div>
+
+    <div class="tab-pane fade in" id="Contact">
+        <h4>This is Contact Us! Phone us</h4>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+    </div>
+
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+    $("#myTabs a:last").tab("show");
+
+    $("a[data-toggle='tab']").on("shown.bs.tab", function (event) {
+        //to access current tab
+        window.alert("The active tab is:"+$(event.target).text());
+
+        //to access previous tab
+        window.alert("The previous tab was:"+$(event.relatedTarget).text());
+
+
+    })
+</script>
+</body>
+</html>
