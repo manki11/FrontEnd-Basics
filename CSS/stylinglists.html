@@ -1,0 +1,55 @@
+<!DOCTYPLE HTML>
+
+<html>
+    <head>
+        
+        <meta charset="uft-8">
+        <title>Styling Lists</title>
+        
+        <style>
+            #list1{
+/*                list-style:lower-alpha;*/
+                list-style-image: url(images/warning.png); 
+            }
+            
+            #list2{
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+            }
+            
+            #list2 li{
+                background-image: url(images/warning.png);
+                background-repeat: no-repeat;
+                padding-left:40px;
+                padding-bottom: 10px;
+                padding-top: 10px;
+                background-position: 0px center;
+                
+            }
+            
+        
+        
+        </style>
+    
+    </head>
+    
+    <body>
+        <p>European Captials</p>
+        <ul id="list1">
+            <li>Madrid</li>
+            <li>London</li>
+            <li>Paris</li>
+        </ul>
+        
+        <br/><br/>
+        
+        <p>Asian Captials</p>
+        <ul id="list2">
+            <li>Seoul</li>
+            <li>Beijing</li>
+            <li>New Delhi</li>
+        </ul>
+        
+    </body>
+</html>
