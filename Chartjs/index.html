@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>ChartJs</title>
+</head>
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        let myChart= document.getElementById("myChart").getContext("2d");
+
+        // Global Properties
+        Chart.defaults.global.defaultFontFamily='sans serif'
+        Chart.defaults.global.defaultFontSize= 15
+        Chart.defaults.global.defaultFontColor='#777'
+
+        let barChart= new Chart(myChart, {
+            type:'bar',
+            data:{
+                labels:['Mumbai','Delhi','Banglore','Hyderabad','Ahmedabad','Chennai','Kolkata'],
+                datasets:[{
+                    label:'Population',
+                    data:[
+                    12442373,
+                    11034555,
+                    8443675,
+                    6993262,
+                    5577940,
+                    4646732,
+                    4496694					
+                    ],
+                    backgroundColor:[
+                        '#C0392B',
+                        '#9B59B6',
+                        '#2980B9',
+                        '#16A085',
+                        '#F1C40F',
+                        '#E67E22',
+                        '#99A3A4'
+                    ],
+                    borderWidth:1,
+                    borderColor:'#777',
+                    hoverBorderWidth:3,
+                    hoverBorderColor:'#000'
+                }]
+            },
+            options:{
+                title:{
+                    display:true,
+                    text:"Most populated Indian Cities",
+                    fontSize: 25
+                },
+                legend:{
+                    position:'right'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
